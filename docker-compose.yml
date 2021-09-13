@@ -17,14 +17,17 @@ services:
 
   mautic:
     container_name: mautic
-    image: mautic/mautic:v3
+    image: dirtsimple/mautic-server
     volumes:
-      - mautic_data:/var/www/html
+      - mautic_data:/data
     environment:
-      - MAUTIC_DB_HOST=database
-      - MAUTIC_DB_USER=root
-      - MAUTIC_DB_PASSWORD=mypassword
-      - MAUTIC_DB_NAME=mautic3
+      - DB_HOST=database
+      - DB_PORT=3306
+      - DB_USER=root
+      - DB_PASSWORD=mypassword
+      - DB_NAME=mautic3
+      - MAUTIC_MAIL_HOST=mailhog
+      - MAUTIC_MAIL_PORT=1025
     restart: always
     networks:
       - mautic_net
