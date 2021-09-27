@@ -6,8 +6,6 @@ services:
     container_name: database
     environment:
       MYSQL_ROOT_PASSWORD: mypassword
-    ports:
-      - 3306:3306
     volumes:
       - mautic_db:/var/lib/mysql
     restart: always
