@@ -15,7 +15,7 @@ services:
 
   mautic:
     container_name: mautic
-    image: dirtsimple/mautic-server
+    image: karser/mautic-server:3.3.3
     volumes:
       - mautic_data:/data
     environment:
